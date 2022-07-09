@@ -4,7 +4,7 @@ const BlockOfBlog = ({data}) =>{
     const { id ,Title_of_Blog,Url_Of_poster ,DOB_of_blog_post,Short_decription} = data;
 return(
      
-        <div className="key={id} w-80 mx-auto  h-auto border   my-8  rounded-xl space-y-1  pb-1 shadow-2xl shadow-black">
+        <div key={id} className=" w-80 mx-auto  h-auto border   my-8  rounded-xl space-y-1  pb-1 shadow-2xl shadow-black">
         <img src={Url_Of_poster} alt="Poster of blog" className="w-full h-44 object-fit rounded-t-xl"/>
         <div className="bg-white">
         <p className='text-xs px-2'>{DOB_of_blog_post}</p>
