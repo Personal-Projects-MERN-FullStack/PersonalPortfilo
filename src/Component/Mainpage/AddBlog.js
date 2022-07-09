@@ -2,35 +2,48 @@ import { useRef } from "react";
 
 
 
-const AddBlog = () => {
+
+const AddBlog = ({setAllTaskShow}) => {
+  
   const TitleOfBLog = useRef();
   const PosterOfBlog = useRef();
-  const DateOFBlog  = useRef();
+
   const ContentOfBlog = useRef();
   const Fname = useRef();
   const Lname = useRef();
   const Mail = useRef();
   const ProfileUrl = useRef();
+  const shortDescription = useRef()
 
   const OnSubmitHandler=(event)=>{
+    var today = new Date();
+
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+var dateTime = date+' '+time;
     event.preventDefault();
+    
+    
     const Enteredtitle = TitleOfBLog.current.value;
     const EnteredPosterUrl = PosterOfBlog.current.value;
-    const EnteredDOB = DateOFBlog.current.value;
     const EnteredContentOfBLog = ContentOfBlog.current.value;
     const EnteredFname = Fname.current.value;
     const EnteredLname = Lname.current.value;
     const EnteredEmail = Mail.current.value;
     const EnteredProfileURl = ProfileUrl.current.value;
+    const EnteredShortDecription = shortDescription.current.value;
     const BlogData = {
       Title_of_Blog : Enteredtitle,
       Url_Of_poster : EnteredPosterUrl,
-      DOB_of_blog_post : EnteredDOB,
+      DOB_of_blog_post : dateTime,
       Content_Of_Blog : EnteredContentOfBLog,
       First_name : EnteredFname,
       Last_name : EnteredLname,
       Email : EnteredEmail,
-      Url_of_Profile : EnteredProfileURl
+      Url_of_Profile : EnteredProfileURl,
+      Short_decription :EnteredShortDecription
     }
     fetch(
       'https://bloging-website-30ee1-default-rtdb.firebaseio.com/blogpostdata.json',
@@ -42,16 +55,25 @@ const AddBlog = () => {
         }
       }
     );
+    setTimeout(function(){
+      setAllTaskShow(true)
+      
+  }, 2000);
+  
+  
   }
   return (
     <>
+    
       <div className=" px-4   border-gray-900  max-w-md">
         <form onSubmit={OnSubmitHandler}>
           <h1 className="w-full  justify-center flex text-2xl font-bold my-2">
             Blog Details
           </h1>
           <div className="form-group mb-6">
+          
             <input
+            maxLength = "50"
               ref={TitleOfBLog}
               type="text"
               className="form-control block
@@ -96,11 +118,13 @@ const AddBlog = () => {
 
             />
           </div>
+          
           <div className="form-group mb-6">
-            <input
-            ref={DateOFBlog}
-              type="date"
-              className="form-control block
+            <textarea
+            ref={shortDescription}
+              className="
+        form-control
+        block
         w-full
         px-3
         py-1.5
@@ -113,13 +137,15 @@ const AddBlog = () => {
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleInput8"
-              placeholder="Date of writing blog"
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      "
+              id="exampleFormControlTextarea13"
+              rows="3"
+              placeholder="Short Decription About Content*"
               required
-            />
+              maxLength = "100"
+            ></textarea>
           </div>
-          
           <div className="form-group mb-6">
             <textarea
             ref={ContentOfBlog}

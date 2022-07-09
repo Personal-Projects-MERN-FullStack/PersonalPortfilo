@@ -1,8 +1,9 @@
-import img from './blog.jpg'
+
 import {useState , useEffect} from 'react';
 import BlockOfBlog from './BlockOfBlog';
 const AllBlogs = () => {
   const [LoadedBlog, setLoadedBlog] = useState([])
+  // const [loading, setloading] = useState(true)
   useEffect(() => {
       
     fetch(
@@ -24,7 +25,12 @@ const AllBlogs = () => {
         }
 
         
-        setLoadedBlog(meetups);
+        setLoadedBlog(meetups.sort(function(a,b){
+          return(
+                new Date(b.DOB_of_blog_post).valueOf()-new Date(a.DOB_of_blog_post).valueOf()
+          );
+        }));
+        // setloading(false);
         
       });
   }, []);
@@ -32,7 +38,7 @@ const AllBlogs = () => {
     
     <>
     {LoadedBlog.map((blogs)=>{
-      return <BlockOfBlog data={blogs}/>
+      return <BlockOfBlog key={blogs.id}  data={blogs}/> 
     })}
       
     </>
