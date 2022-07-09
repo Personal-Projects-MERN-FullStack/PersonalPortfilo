@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 
 
-const Addtaskform = () => {
+const AddBlog = () => {
   const TitleOfBLog = useRef();
   const PosterOfBlog = useRef();
   const DateOFBlog  = useRef();
@@ -23,7 +23,7 @@ const Addtaskform = () => {
     const EnteredEmail = Mail.current.value;
     const EnteredProfileURl = ProfileUrl.current.value;
     const BlogData = {
-      titile_of_Blog : Enteredtitle,
+      Title_of_Blog : Enteredtitle,
       Url_Of_poster : EnteredPosterUrl,
       DOB_of_blog_post : EnteredDOB,
       Content_Of_Blog : EnteredContentOfBLog,
@@ -274,4 +274,4 @@ const Addtaskform = () => {
     </>
   );
 };
-export default Addtaskform;
+export default AddBlog;
