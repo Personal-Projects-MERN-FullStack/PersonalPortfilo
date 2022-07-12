@@ -1,33 +1,28 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navigation from "./Component/Mainnavigation/Navigation";
-import AddBlog from "./Component/Mainpage/AddBlog";
-import AllBlogs from "./Component/Mainpage/AllBlogs";
+
+import BlogFormSubmisstion from "./Pages/BlogFormSubmisstion";
+import Home from "./Pages/Home";
 
 function App() {
-  const [AllTaskShow, setAllTaskShow] = useState(true);
-  
-
-  return ( <>
+  return (<Router>
     
-    <div className="bg-blue-300">
-    <marquee className="bg-blue-200">Currently This website is under maintainese or just for trial purpose</marquee>
-      <Navigation setAllTaskShow={setAllTaskShow} AllTaskshow={AllTaskShow} />
+      <div className="bg-blue-300">
+        <Navigation />
 
-      {AllTaskShow && (
         <div className=" pb-16 md:grid md:gap-y-16  md:grid-cols-3 md:grid-rows-none  bg-cyan-100 space-y-4 overflow-scroll rounded-t-[60px] h-screen mt-12 pt-8">
-          <AllBlogs />
+          
+            
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/BLogSubmitForm" element={<BlogFormSubmisstion />} />
+            </Routes>
           
         </div>
-      )}
-      {!AllTaskShow && (
-        <div className=" pb-16 md:grid md:gap-6 md:grid-cols-3 md:grid-rows-3 bg-cyan-50  rounded-t-[60px] h-screen mt-12 pt-8 py-8 px-8 ">
-          <AddBlog setAllTaskShow={setAllTaskShow}/>
-        </div>
-      )}
-
-      
-    </div>
-    </> );
+      </div>
+    </Router>
+  );
 }
 
 export default App;

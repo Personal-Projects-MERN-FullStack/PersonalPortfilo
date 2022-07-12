@@ -1,6 +1,5 @@
 import { useRef } from "react";
-
-
+import { Link } from "react-router-dom";
 
 
 const AddBlog = ({setAllTaskShow}) => {
@@ -291,7 +290,7 @@ var dateTime = date+' '+time;
       duration-150
       ease-in-out"
           >
-            POST BLOG
+           <Link to='/'> POST BLOG</Link>
           </button>
         </form>
       </div>
