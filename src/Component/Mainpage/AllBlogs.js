@@ -3,8 +3,10 @@ import {useState , useEffect} from 'react';
 import BlockOfBlog from './BlockOfBlog';
 const AllBlogs = () => {
   const [LoadedBlog, setLoadedBlog] = useState([])
+ 
   // const [loading, setloading] = useState(true)
   useEffect(() => {
+
       
     fetch(
       'https://bloging-website-30ee1-default-rtdb.firebaseio.com/blogpostdata.json'
@@ -38,7 +40,7 @@ const AllBlogs = () => {
     
     <>
     {LoadedBlog.map((blogs)=>{
-      return <BlockOfBlog key={blogs.id}  data={blogs}/> 
+      return (<>  <BlockOfBlog key={blogs.id}  data={blogs}/> </>)
     })}
       
     </>
