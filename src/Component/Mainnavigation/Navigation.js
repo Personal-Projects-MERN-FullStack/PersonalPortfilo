@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import lightmode from './brightness.png'
 import darkmode from './night-mode.png'
-
+import Notecontext from "../../Context/Notes/Notecontext";
 
 const Navigation = () => {
   const [show, setshow] = useState(true)
   const [dark, setdark] = useState()
+  const value = useContext(Notecontext)
+ console.log(value.loggedin)
 
   const themeSwitch = () =>{
     if(document.documentElement.classList.contains("dark")){
@@ -68,13 +70,20 @@ const Navigation = () => {
           >
             Blogs
           </Link>
-          <Link
+          {(value.loggedin) && <Link
             href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2"
             to="/BLogSubmitForm"
           >
            Add new
-          </Link>
+          </Link>}
+          {(!value.loggedin) && <button
+            href="#responsive-header"
+            className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-gray-700 mr-2"
+            onClick={()=>{alert("Login or Register to add blog")}}
+          >
+           Add new
+          </button> }
         </div>
 
         <div className="relative mx-auto text-gray-600 lg:block hidden">
