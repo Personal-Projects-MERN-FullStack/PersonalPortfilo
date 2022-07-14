@@ -1,8 +1,9 @@
-import AllBlogs from "../Component/Mainpage/AllBlogs"
+import React from 'react'
 
-const Home= () =>{
-return(
-    <AllBlogs/>
-);
+const Home = () => {
+  return (
+    <div>Home page coming soon </div>
+  )
 }
-export default Home;
+
+export default Home

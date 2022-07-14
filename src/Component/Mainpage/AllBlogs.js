@@ -4,7 +4,6 @@ import BlockOfBlog from './BlockOfBlog';
 const AllBlogs = () => {
   const [LoadedBlog, setLoadedBlog] = useState([])
  
-  // const [loading, setloading] = useState(true)
   useEffect(() => {
 
       

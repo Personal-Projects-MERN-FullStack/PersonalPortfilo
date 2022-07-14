@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navigation from "./Component/Mainnavigation/Navigation";
 import Notestate from "./Context/Notes/Notestate";
 import BlogFormSubmisstion from "./Pages/BlogFormSubmisstion";
+import Auth from './Pages/Auth'
 import Error from "./Pages/Error";
 import Home from "./Pages/Home";
-import Notecontext from "./Context/Notes/Notecontext";
-import { useContext } from "react";
+import Blogs from "./Pages/Blogs";
+
+
 function App() {
-  const a = useContext(Notecontext)
+  
 
   return (
   <Notestate>
@@ -19,16 +21,19 @@ function App() {
       
          
 
-        <div className=" pb-16 md:grid md:gap-y-16  md:grid-cols-3 md:grid-rows-none  bg-cyan-100 space-y-4 overflow-scroll rounded-t-[60px] h-screen mt-12 ">
+        <div className=" pb-16   bg-cyan-100  overflow-scroll rounded-t-[60px] h-screen mt-12 ">
           
             
             <Routes>
-              <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
+              <Route exact path="/Blogs" element={<Blogs />} />
               <Route exact path="/BLogSubmitForm" element={<BlogFormSubmisstion />} />
+              <Route  path="/login" element={<Auth/>} />
               <Route  path="*" element={<Error />} />
             </Routes>
           
         </div>
+        
       </div>
     </Router>
     </Notestate>
