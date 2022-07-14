@@ -1,7 +1,25 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import lightmode from './brightness.png'
+import darkmode from './night-mode.png'
+
+
 const Navigation = () => {
   const [show, setshow] = useState(true)
+  const [dark, setdark] = useState()
+
+  const themeSwitch = () =>{
+    if(document.documentElement.classList.contains("dark")){
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem( 'theme',"light");
+      setdark(false)
+      return;
+    }
+    document.documentElement.classList.add("dark");
+    localStorage.setItem('theme' , "dark");
+    setdark(true)
+
+  };
   
   const onclickhandler = () => {
     setshow(!show);
@@ -9,7 +27,7 @@ const Navigation = () => {
   };
   return (
     <>
-      <nav className="flex items-center justify-between flex-wrap bg-cyan-100 py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
+      <nav className="flex items-center justify-between flex-wrap dark:bg-gray-200 bg-cyan-100 py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
         <div className="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
           <div className="flex items-center flex-shrink-0 text-gray-800 mr-16">
             <span className="font-semibold text-xl tracking-tight">
@@ -81,13 +99,16 @@ const Navigation = () => {
             </svg>
           </button>
         </div>
-        <div className="flex ">
+        <div className="flex lg:justify-center">
           <Link
             to="/Login"
             className="block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
           >
             Sign in
           </Link>
+
+          <span className="lg:flex lg:items-center" onClick={themeSwitch}><img alt="light and dark mode toggle here" className="h-6 w-6" src={(dark)?darkmode:lightmode}/></span>
+          
 
          
         </div>

@@ -16,12 +16,12 @@ function App() {
   <Notestate>
   <Router>
     
-      <div className="bg-blue-300">
+      <div className="bg-blue-300  ">
          <Navigation />
       
          
 
-        <div className=" pb-16   bg-cyan-100  overflow-scroll rounded-t-[60px] h-screen mt-12 ">
+        <div className=" pb-16   bg-cyan-100    overflow-scroll rounded-t-[60px] h-screen mt-12 ">
           
             
             <Routes>
