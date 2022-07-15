@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate   } from "react-router-dom";
 
-const AddBlog = ({ setAllTaskShow }) => {
-  
+const AddBlog = () => {
+  const navigate = useNavigate ();
   const TitleOfBLog = useRef();
   const PosterOfBlog = useRef();
 
@@ -58,9 +58,9 @@ const AddBlog = ({ setAllTaskShow }) => {
         },
       }
     );
-    setTimeout(function () {
-      setAllTaskShow(true);
-    }, 2000);
+    
+      navigate('/blogs');
+  
   };
   return (
     <>
@@ -269,7 +269,7 @@ const AddBlog = ({ setAllTaskShow }) => {
                   placeholder="Paster url of your profile photo"
                 />
               </div>
-              <Link to="/blogs">
+            
               <button
                 type="submit"
                 className="
@@ -293,7 +293,7 @@ const AddBlog = ({ setAllTaskShow }) => {
               >
                  POST BLOG
               </button>
-              </Link>
+              
             </div>
           </div>
         </form>

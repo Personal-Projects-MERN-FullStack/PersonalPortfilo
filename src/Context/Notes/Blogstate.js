@@ -1,11 +1,11 @@
 import Notecontext from "./Notecontext";
 import { useState , useEffect} from "react";
-const Notestate=(props)=>{
+const Blogstate=(props)=>{
    const [value, setvalue] = useState(false)
    const [loggedin, setloggedin] = useState(false)
    const [LoadedBlog, setLoadedBlog] = useState([])
-   const [id, setid] = useState("-N6xia3p7K6ymQ3jkmIC")
-   const [content, setcontent] = useState([])
+   const [id, setid] = useState("")
+   
   
    useEffect(() => {
  
@@ -34,17 +34,17 @@ const Notestate=(props)=>{
                  new Date(b.DOB_of_blog_post).valueOf()-new Date(a.DOB_of_blog_post).valueOf()
            );
          }));
-         // setloading(false);
+       
         
        });
-       setcontent(LoadedBlog.find(item => item.id === id));
-   }, [id,LoadedBlog]);
+       
+   }, []);
    
     
 return(
-    <Notecontext.Provider value={{value,loggedin,setvalue,setloggedin,LoadedBlog,id,setid,content}}>
+    <Notecontext.Provider value={{value,loggedin,setvalue,setloggedin,LoadedBlog,id,setid}}>
         {props.children}
     </Notecontext.Provider>
 );
 }
-export default Notestate;
+export default Blogstate;

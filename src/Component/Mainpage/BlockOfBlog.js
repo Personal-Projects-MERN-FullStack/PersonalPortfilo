@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Notecontext from "../../Context/Notes/Notecontext";
 const BlockOfBlog = ({ data }) => {
+  
   const value = useContext(Notecontext)
   const {
     id,
@@ -10,8 +11,9 @@ const BlockOfBlog = ({ data }) => {
     DOB_of_blog_post,
     Short_decription,
   } = data;
+  console.log(id)
   return (
-    <li key={id}>
+   
     <div
       
       className=" w-80 mx-auto  h-auto border   my-8  rounded-xl    shadow-2xl dark:shadow-lg shadow-green-900 dark:shadow-white"
@@ -39,7 +41,7 @@ const BlockOfBlog = ({ data }) => {
         </div>
       </div>
     </div>
-    </li>
+
   );
 };
 export default BlockOfBlog;

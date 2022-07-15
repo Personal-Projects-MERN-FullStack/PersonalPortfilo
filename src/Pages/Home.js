@@ -1,10 +1,11 @@
 
-import BlogPage from '../Component/Mainpage/BlogPage';
 
 const Home = () => {
 
     return (
-    <BlogPage/>
+    <div className='flex justify-center items-center h-screen w- screen'>
+      <h1>Page is Comming soon</h1>
+    </div>
 
   )
 }

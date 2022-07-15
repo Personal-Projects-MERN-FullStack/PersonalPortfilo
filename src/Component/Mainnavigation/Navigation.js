@@ -7,7 +7,7 @@ import Notecontext from "../../Context/Notes/Notecontext";
 const Navigation = () => {
   const [show, setshow] = useState(true);
   const [dark, setdark] = useState();
-  const value = useContext(Notecontext);
+  const {loggedin} = useContext(Notecontext);
   
 
   const themeSwitch = () => {
@@ -70,7 +70,7 @@ const Navigation = () => {
               >
                 Blogs
               </Link>
-              {value.loggedin && (
+              {loggedin && (
                 <Link
                   href="#responsive-header"
                   className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2"
@@ -79,7 +79,7 @@ const Navigation = () => {
                   Add new
                 </Link>
               )}
-              {!value.loggedin && (
+              {!loggedin && (
                 <button
                   href="#responsive-header"
                   className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-gray-700 mr-2"
@@ -101,7 +101,7 @@ const Navigation = () => {
               />
               <button
                 type="submit"
-                className="absolute right-0 top-0 mt-3 mr-2"
+                className="absolute right-0 top-0 mt-3 mr-2 animate-bounce"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +125,7 @@ const Navigation = () => {
                 Sign in
               </Link>
 
-              <span className="lg:flex lg:items-center" onClick={themeSwitch}>
+              <span className="lg:flex lg:items-center cursor-pointer" onClick={themeSwitch}>
                 <img
                   alt="light and dark mode toggle here"
                   className="h-6 w-6"
