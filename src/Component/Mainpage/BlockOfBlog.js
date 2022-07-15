@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import Notecontext from "../../Context/Notes/Notecontext";
 const BlockOfBlog = ({ data }) => {
+  const value = useContext(Notecontext)
   const {
     id,
     Title_of_Blog,
@@ -8,8 +11,9 @@ const BlockOfBlog = ({ data }) => {
     Short_decription,
   } = data;
   return (
+    <li key={id}>
     <div
-      key={id}
+      
       className=" w-80 mx-auto  h-auto border   my-8  rounded-xl    shadow-2xl dark:shadow-lg shadow-green-900 dark:shadow-white"
     >
       <img
@@ -25,14 +29,17 @@ const BlockOfBlog = ({ data }) => {
         </p>
 
         <div className="flex items-center">
-          <Link to="">
-            <button className="text-sm text-blue-900 rounded-xl p-1 px-2 ">
+          <Link to="/Blogs/Blogspage">
+            <button className="text-sm text-blue-900 rounded-xl p-1 px-2 "
+            onClick={()=>{value.setid(id)}}
+            >
               Readmore
-            </button>{" "}
+            </button>
           </Link>
         </div>
       </div>
     </div>
+    </li>
   );
 };
 export default BlockOfBlog;

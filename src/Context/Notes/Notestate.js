@@ -1,11 +1,48 @@
 import Notecontext from "./Notecontext";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 const Notestate=(props)=>{
    const [value, setvalue] = useState(false)
    const [loggedin, setloggedin] = useState(false)
+   const [LoadedBlog, setLoadedBlog] = useState([])
+   const [id, setid] = useState("-N6xia3p7K6ymQ3jkmIC")
+   const [content, setcontent] = useState([])
+  
+   useEffect(() => {
+ 
+       
+     fetch(
+       'https://bloging-website-30ee1-default-rtdb.firebaseio.com/blogpostdata.json'
+     )
+       .then((response) => {
+         return response.json();
+       })
+       .then((data) => {
+         const meetups = [];
+ 
+         for (const key in data) {
+           const meetup = {
+             id: key,
+             ...data[key]
+           };
+ 
+           meetups.push(meetup);
+         }
+ 
+         
+         setLoadedBlog(meetups.sort(function(a,b){
+           return(
+                 new Date(b.DOB_of_blog_post).valueOf()-new Date(a.DOB_of_blog_post).valueOf()
+           );
+         }));
+         // setloading(false);
+        
+       });
+       setcontent(LoadedBlog.find(item => item.id === id));
+   }, [id,LoadedBlog]);
+   
     
 return(
-    <Notecontext.Provider value={{value,loggedin}}>
+    <Notecontext.Provider value={{value,loggedin,setvalue,setloggedin,LoadedBlog,id,setid,content}}>
         {props.children}
     </Notecontext.Provider>
 );

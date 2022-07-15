@@ -8,7 +8,7 @@ const Navigation = () => {
   const [show, setshow] = useState(true);
   const [dark, setdark] = useState();
   const value = useContext(Notecontext);
-  console.log(value.loggedin);
+  
 
   const themeSwitch = () => {
     if (document.documentElement.classList.contains("dark")) {
@@ -24,7 +24,7 @@ const Navigation = () => {
 
   const onclickhandler = () => {
     setshow(!show);
-    console.log(show);
+    
   };
   return (
     <>
