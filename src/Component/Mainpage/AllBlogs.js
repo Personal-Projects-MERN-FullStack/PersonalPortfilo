@@ -5,7 +5,14 @@ import Notecontext from '../../Context/Notes/Notecontext';
 const AllBlogs = () => {
  const {LoadedBlog} = useContext(Notecontext)
 
- if(!LoadedBlog.length === 0){
+ if(LoadedBlog.length === 0){
+  return  <div className='flex justify-center items-center h-screen w- screen animate-pulse'>
+  <h1 className='text-2xl font-bold text-red-900'>Be first to Add blog</h1>
+ </div>
+   
+
+ }
+
   return (
     
     <>
@@ -15,11 +22,6 @@ const AllBlogs = () => {
     })}
       
     </>
-  );
- }
- return  <div className='flex justify-center items-center h-screen w- screen animate-pulse'>
- <h1 className='text-2xl font-bold text-red-900'>Be first to Add blog</h1>
-</div>
-  
+      );
 };
 export default AllBlogs;

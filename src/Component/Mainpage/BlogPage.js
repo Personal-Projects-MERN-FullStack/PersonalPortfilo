@@ -35,16 +35,17 @@ const BlogPage = () => {
     Url_Of_poster,
     DOB_of_blog_post,
     Short_decription,
-    First_Name,
+    First_name,
     Last_name,
-    Content_of_Blog,
+    Content_Of_Blog,
     Url_of_Profile
   } = LoadedBlog
 
+
   return (
-    <div className="lg:flex  lg:mx-auto ">
-      <div className=" max-h-screen lg:w-2/3 h-screen max-w-screen px-4 py-8 space-y-2 overflow-scroll">
-        <div className="flex ">
+    <div className="lg:flex  lg:mx-auto lg:w-3/5 ">
+      <div className=" max-h-screen  h-screen max-w-screen px-4 py-8 space-y-2 overflow-scroll">
+        <div className="flex shadow-gray-500 shadow-sm rounded-2xl border-black ">
           <div className="w-2/6  p-2 flex items-center justify-center">
             <img
               alt="light and dark mode toggle here"
@@ -55,10 +56,10 @@ const BlogPage = () => {
 
           <div className="w-full  flex flex-col items-center ">
             <div className=" h-1/2 w-full font-medium flex items-center dark:text-white">
-              {First_Name + " " + Last_name}
+              {First_name + " " + Last_name}
             </div>
             <div className=" h-1/2 w-full flex items-center dark:text-white">
-              <div className="w-1/4 font-extralight">{DOB_of_blog_post} </div>
+              <div className="w-1/4 font-extralight">15 Dec </div>
               <div className="w-2/4 font-extralight">10 Min Read </div>
               <div className="w-1/4 font-extralight">item </div>
             </div>
@@ -79,7 +80,7 @@ const BlogPage = () => {
         </div>
         <div className=" w-full px-3 dark:text-white  text-gray-900 ">
           <p>
-          {Content_of_Blog}
+          {Content_Of_Blog}
           </p>
         </div>
       </div>

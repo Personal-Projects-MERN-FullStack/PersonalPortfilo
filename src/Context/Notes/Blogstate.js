@@ -2,7 +2,7 @@ import Notecontext from "./Notecontext";
 import { useState , useEffect} from "react";
 const Blogstate=(props)=>{
    const [value, setvalue] = useState(false)
-   const [loggedin, setloggedin] = useState(false)
+   const [loggedin, setloggedin] = useState(true)
    const [LoadedBlog, setLoadedBlog] = useState([])
    const [id, setid] = useState("")
    
