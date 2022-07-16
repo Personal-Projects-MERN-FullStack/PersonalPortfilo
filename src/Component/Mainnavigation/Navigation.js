@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import lightmode from "./brightness.png";
 import darkmode from "./night-mode.png";
 import Notecontext from "../../Context/Notes/Notecontext";
 
 const Navigation = () => {
+  const navigate = useNavigate ();
   const [show, setshow] = useState(true);
   const [dark, setdark] = useState();
-  const { loggedin } = useContext(Notecontext);
+  const { loggedin,setloggedin } = useContext(Notecontext);
 
   const themeSwitch = () => {
     if (document.documentElement.classList.contains("dark")) {
@@ -24,6 +25,10 @@ const Navigation = () => {
   const onclickhandler = () => {
     setshow(!show);
   };
+  const onlogouthandler=()=>{
+    setloggedin(false);
+     navigate('/')
+  }
   return (
     <>
       <nav className="flex items-center justify-between flex-wrap dark:bg-gray-800 bg-cyan-100 dark:text-white py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
@@ -113,26 +118,34 @@ const Navigation = () => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
                   <path
-                    fill-rule="evenodd"
+                    
                     d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clip-rule="evenodd"
+                
                   />
                 </svg>
               </button>
             </div>
-            <div className="flex lg:justify-center">
+            {!loggedin && <div className="flex lg:justify-center">
               <Link
-                to="/Login"
+                to="/Auth/Login"
                 className="dark:text-white block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
               >
                 Sign in
               </Link>
-            </div>
+            </div>}
+            {loggedin && <div className="flex lg:justify-center">
+              <span
+                onClick={onlogouthandler}
+                className="dark:text-white block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
+              >
+                Logout
+              </span>
+            </div>}
             <span
               className="lg:flex lg:items-center cursor-pointer"
               onClick={themeSwitch}

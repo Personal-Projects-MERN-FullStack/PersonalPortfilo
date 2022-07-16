@@ -11,7 +11,7 @@ const BlockOfBlog = ({ data }) => {
     DOB_of_blog_post,
     Short_decription,
   } = data;
-  console.log(id)
+
   return (
    
     <div

@@ -12,7 +12,7 @@ const BlogPage = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data)
+   
         
         let blogbyid = null;
         for (const key in data) {
@@ -33,7 +33,7 @@ const BlogPage = () => {
         
     Title_of_Blog,
     Url_Of_poster,
-    DOB_of_blog_post,
+   
     Short_decription,
     First_name,
     Last_name,
