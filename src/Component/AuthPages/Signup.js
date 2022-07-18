@@ -1,4 +1,4 @@
-import React, { useState, useRef ,useContext} from "react";
+import React, { useRef ,useContext} from "react";
 import {Link} from 'react-router-dom'
 import { useNavigate   } from "react-router-dom";
 import Notecontext from "../../Context/Notes/Notecontext";
@@ -35,14 +35,15 @@ const Signup = () => {
       });
       const json = await response.json();
       console.log(json)
-      if (json) {
+      if (json.success) {
         // Save the auth token and redirect
         localStorage.setItem("token", json.authtoken);
         context.setloggedin(true)
+        context.showAlert("Singn Up succefulluy","success")
         navigate('/');
         
       } else {
-        alert("Invalid credentials");
+        context.showAlert("plz fill correct info","danger")
       }
     
  

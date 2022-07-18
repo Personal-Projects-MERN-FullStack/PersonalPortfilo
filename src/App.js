@@ -1,5 +1,5 @@
+//Importing stetement of files
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navigation from "./Component/Mainnavigation/Navigation";
 import BlogFormSubmisstion from "./Pages/BlogFormSubmisstion";
 import Auth from "./Pages/Auth";
 import Error from "./Pages/Error";
@@ -8,8 +8,12 @@ import Blogs from "./Pages/Blogs";
 import BlogPage from "./Component/Mainpage/BlogPage";
 import Blogstate from "./Context/Notes/Blogstate";
 import Signup from "./Component/AuthPages/Signup";
+import Layout from "./Component/UI/Layout";
 
+//Main function
 function App() {
+  // console.log(value.alert)
+
   // const routesdata = {
   //   books: [
   //     {
@@ -38,21 +42,23 @@ function App() {
   return (
     <Blogstate>
       <Router>
-        <div className="bg-blue-300  ">
-          <Navigation />
-
-          <div className=" pb-16   bg-cyan-100 dark:bg-gray-900   overflow-scroll rounded-t-[60px] h-screen mt-12 ">
+        <Layout>
+          <div className=" pb-16   bg-cyan-100 dark:bg-gray-900   overflow-scroll rounded-t-[50px] h-screen ">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/Blogs" element={<Blogs />} />
               <Route exact path="/Blogs/Blogspage" element={<BlogPage />} />
-              <Route exact path="/BLogSubmitForm" element={<BlogFormSubmisstion />}/>
+              <Route
+                exact
+                path="/BLogSubmitForm"
+                element={<BlogFormSubmisstion />}
+              />
               <Route path="/Auth/Login" element={<Auth />} />
               <Route path="/Auth/Signup" element={<Signup />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </div>
-        </div>
+        </Layout>
       </Router>
     </Blogstate>
   );

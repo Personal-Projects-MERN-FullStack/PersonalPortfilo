@@ -5,6 +5,20 @@ const Blogstate=(props)=>{
    const [loggedin, setloggedin] = useState(false)
    const [LoadedBlog, setLoadedBlog] = useState([])
    const [id, setid] = useState("")
+   const [alert,setalert] = useState([])
+   const [blog_loading, setblog_loading] = useState(true)
+  
+   const showAlert = (message, type)=>{
+    setalert(
+      {
+        msg:message,
+        type: type
+      }
+    )
+    setTimeout(() => {
+      setalert(null)
+    }, 2000);
+   }
    
   
    useEffect(() => {
@@ -15,6 +29,7 @@ const Blogstate=(props)=>{
      )
        .then((response) => {
          return response.json();
+         
        })
        .then((data) => {
          const meetups = [];
@@ -28,13 +43,16 @@ const Blogstate=(props)=>{
            meetups.push(meetup);
          }
  
-         
+        
          setLoadedBlog(meetups.sort(function(a,b){
            return(
                  new Date(b.DOB_of_blog_post).valueOf()-new Date(a.DOB_of_blog_post).valueOf()
+                 
            );
-         }));
-       
+         })
+         );
+         
+         setblog_loading(false)
         
        });
        
@@ -42,7 +60,7 @@ const Blogstate=(props)=>{
    
     
 return(
-    <Notecontext.Provider value={{value,loggedin,setvalue,setloggedin,LoadedBlog,id,setid}}>
+    <Notecontext.Provider value={{value,loggedin,setvalue,setloggedin,LoadedBlog,id,setid,alert,showAlert,blog_loading}}>
         {props.children}
     </Notecontext.Provider>
 );

@@ -2,8 +2,9 @@
 import {useContext} from 'react';
 import BlockOfBlog from './BlockOfBlog';
 import Notecontext from '../../Context/Notes/Notecontext';
+import Loading from '../Util/Loading'
 const AllBlogs = () => {
- const {LoadedBlog} = useContext(Notecontext)
+ const {LoadedBlog,blog_loading} = useContext(Notecontext)
 
  if(LoadedBlog.length === 0){
   return  <div className='flex justify-center items-center h-screen w- screen animate-pulse'>
@@ -11,6 +12,9 @@ const AllBlogs = () => {
  </div>
    
 
+ }
+ else if(blog_loading){
+  return <Loading/>
  }
 
   return (

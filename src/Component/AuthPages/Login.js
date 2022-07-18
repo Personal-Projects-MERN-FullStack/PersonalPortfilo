@@ -20,7 +20,7 @@ const Login = () => {
       password: ePassword
     };
   
-      const response = await fetch("/api/auth/login", {
+      const response = await fetch("/api/auth/login ", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,14 +32,16 @@ const Login = () => {
         }),
       });
       const json = await response.json();
-      console.log(json)
-      if (json) {
+      console.log(json.success)
+      if (json.success ) {
         // Save the auth token and redirect
         localStorage.setItem("token", json.authtoken);
+        value.showAlert("Logged in succesfully","success");
         value.setloggedin(true);
+        
         navigate('/');
       } else {
-        alert("Invalid credentials");
+        value.showAlert("Invalid details" ,"danger");
       }
     
  

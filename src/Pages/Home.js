@@ -3,7 +3,7 @@
 const Home = () => {
 
     return (
-    <div className='flex justify-center items-center h-screen w- screen'>
+    <div className='flex justify-center items-center h-screen w- screen dark:text-white'>
       <h1>Page is Comming soon</h1>
     </div>
 

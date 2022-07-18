@@ -1,14 +1,14 @@
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import lightmode from "./brightness.png";
 import darkmode from "./night-mode.png";
 import Notecontext from "../../Context/Notes/Notecontext";
 
 const Navigation = () => {
-  const navigate = useNavigate ();
+  const navigate = useNavigate();
   const [show, setshow] = useState(true);
   const [dark, setdark] = useState();
-  const { loggedin,setloggedin } = useContext(Notecontext);
+  const { loggedin, setloggedin } = useContext(Notecontext);
 
   const themeSwitch = () => {
     if (document.documentElement.classList.contains("dark")) {
@@ -25,25 +25,25 @@ const Navigation = () => {
   const onclickhandler = () => {
     setshow(!show);
   };
-  const onlogouthandler=()=>{
+  const onlogouthandler = () => {
     setloggedin(false);
-     navigate('/')
-  }
+    navigate("/");
+  };
   return (
     <>
-      <nav className="flex items-center justify-between flex-wrap dark:bg-gray-800 bg-cyan-100 dark:text-white py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
-        <div className="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
+      <nav className="flex items-center justify-between flex-wrap dark:bg-gray-800  dark:text-white pt-4 lg:py-3 lg:px-12 ">
+        <div className="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2  border-gray-300 pb-5 lg:pb-0">
           <div className="flex items-center flex-shrink-0 text-gray-800 mr-16">
             <span className="font-semibold text-xl tracking-tight dark:text-white">
               Pesonal web
             </span>
           </div>
 
-          <div className="lg:hidden flex space-x-2 items-center justify-center ">
+          <div className="lg:hidden flex space-x-4 items-center justify-center ">
             <span className=" lg:hidden cursor-pointer " onClick={themeSwitch}>
               <img
                 alt="light and dark mode toggle here"
-                className="h-6 w-6"
+                className={`h-6 w-6 ${dark ? "invert" : "invert-0"}`}
                 src={dark ? lightmode : darkmode}
               />
             </span>
@@ -67,8 +67,8 @@ const Navigation = () => {
         </div>
 
         {show && (
-          <div className="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
-            <div className="text-md font-bold text-blue-700 lg:flex-grow dark:text-white">
+          <div className="menu w-full  flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
+            <div className="text-md font-bold text-blue-700 lg:flex-grow dark:text-white flex flex-col justify-center items-center lg:flex-row  lg:justify-start">
               <Link
                 href="#responsive-header"
                 className="block  mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2"
@@ -122,37 +122,37 @@ const Navigation = () => {
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
-                  <path
-                    
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                
-                  />
+                  <path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
                 </svg>
               </button>
             </div>
-            {!loggedin && <div className="flex lg:justify-center">
-              <Link
-                to="/Auth/Login"
-                className="dark:text-white block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
-              >
-                Sign in
-              </Link>
-            </div>}
-            {loggedin && <div className="flex lg:justify-center">
-              <span
-                onClick={onlogouthandler}
-                className="dark:text-white block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
-              >
-                Logout
-              </span>
-            </div>}
+            {!loggedin && (
+              <div className="flex lg:justify-center justify-center">
+                <Link
+                  to="/Auth/Login"
+                  className="dark:text-white block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
+                >
+                  Sign in
+                </Link>
+              </div>
+            )}
+            {loggedin && (
+              <div className="flex lg:justify-center cursor-pointer">
+                <span
+                  onClick={onlogouthandler}
+                  className=" dark:text-white block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
+                >
+                  Logout
+                </span>
+              </div>
+            )}
             <span
-              className="lg:flex lg:items-center cursor-pointer"
+              className="lg:flex lg:items-center cursor-pointer invisible lg:visible"
               onClick={themeSwitch}
             >
               <img
                 alt="light and dark mode toggle here"
-                className="h-6 w-6"
+                className={`h-6 w-6 ${dark ? "invert" : "invert-0"}`}
                 src={dark ? lightmode : darkmode}
               />
             </span>
