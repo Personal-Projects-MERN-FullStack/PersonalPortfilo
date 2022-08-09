@@ -7,6 +7,7 @@ const Blogstate=(props)=>{
    const [id, setid] = useState("")
    const [alert,setalert] = useState([])
    const [blog_loading, setblog_loading] = useState(true)
+   const [otp, setotp] = useState()
   
    const showAlert = (message, type)=>{
     setalert(
@@ -60,7 +61,7 @@ const Blogstate=(props)=>{
    
     
 return(
-    <Notecontext.Provider value={{value,loggedin,setvalue,setloggedin,LoadedBlog,id,setid,alert,showAlert,blog_loading}}>
+    <Notecontext.Provider value={{otp,setotp,value,loggedin,setvalue,setloggedin,LoadedBlog,id,setid,alert,showAlert,blog_loading}}>
         {props.children}
     </Notecontext.Provider>
 );

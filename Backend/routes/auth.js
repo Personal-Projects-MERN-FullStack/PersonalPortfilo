@@ -146,20 +146,21 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({success, errors: errors.array() });
     }
-    const {email} = req.body;
+    const {email,name} = req.body;
     try {
+      
       function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       }
-    let x = getRandomInt(111111,999999)
-    let stetement = "Thank you for register to portal Your otp is " + x + " This mail is send through node js by Vaibhav Mohanalkar jr tula ha msg alal asel tr malal whats app war done mhnun send kar msg"
+    let otp = getRandomInt(111111,999999)
+    let message = "Dear " + name +" Your Verification Code for portal login is " + otp
     const msg = {
         from : "mohanalkarvaibahv@gmail.com",
         to : email,
-        subject:"testing ",
-        text : stetement
+        subject:"Portal Verification Code",
+        text : message
     };
     nodemailer.createTransport(
         {
@@ -177,12 +178,15 @@ router.post(
         if(err){
             return console.log('error occurs',err);
         }else{
-            return console.log('Email sent');
-           
-            
+             console.log('Email sent');
+             success=true;
+             
+             
         }
     })
-    res.json({x})
+    
+    
+    res.json({success,otp})
     
     } catch (error) {
       console.error(error.message);

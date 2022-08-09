@@ -65,7 +65,7 @@ const Login = () => {
       
     }),
   });
-  const json = await response.json();
+  // const json = await response.json();
 
   value.showAlert(`Otp sent Successfully`,"success");
   
