@@ -46,7 +46,27 @@ const Login = () => {
     
  
   };
-
+ const onmailsendhandler = async ()=>{
+  const eemail = Enteredemail.current.value;
+    const ePassword = Enteredpassword.current.value;
+    const LoginData = {
+      
+      email: eemail,
+      password: ePassword
+    };
+  const response = await fetch("/api/auth/check ", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      email: LoginData.email
+      
+    }),
+  });
+  const json = await response.json();
+ }
   return (
     <>
       <form onSubmit={onsubmithandler}>
@@ -137,7 +157,20 @@ const Login = () => {
             required
           />
         </div>
-
+        <div className="form-group mb-6">
+          <span onClick={onmailsendhandler} className="cursor-pointer">Send mail</span>
+        </div>
+        <div className="form-group mb-6">
+          <input
+            maxLength="50"
+            ref={Enteredpassword}
+            type="password"
+            className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            id="exampleInput3"
+            placeholder="Enter OTP"
+            required
+          />
+        </div>
        
           <div className="flex justify-between items-center mb-6">
             <div className="form-group form-check">

@@ -1,4 +1,5 @@
 const express = require("express");
+const nodemailer = require('nodemailer');
 const router = express.Router();
 const User = require("../modules/Users");
 const { body, validationResult } = require("express-validator");
@@ -128,4 +129,79 @@ router.post('/getuser', fetchuser,  async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 })
+
+
+
+
+
+
+
+router.post(
+  "/check",
+  
+  async (req, res) => {
+    let success = false;
+    //if error send and bad request
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({success, errors: errors.array() });
+    }
+    const {email} = req.body;
+    try {
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      }
+    let x = getRandomInt(111111,999999)
+    let stetement = "Thank you for register to portal Your otp is " + x + " This mail is send through node js by Vaibhav Mohanalkar jr tula ha msg alal asel tr malal whats app war done mhnun send kar msg"
+    const msg = {
+        from : "mohanalkarvaibahv@gmail.com",
+        to : email,
+        subject:"testing ",
+        text : stetement
+    };
+    nodemailer.createTransport(
+        {
+            service : 'gmail',
+            auth:{
+                user:"mohanalkarvaibhav@gmail.com",
+                pass : "sdsxlvqnevxizocr"
+            },
+            port : 465,
+            host:'smtp.gmail.com'
+        }
+    )
+    .sendMail(msg,(err)=>{
+        if(err){
+            return console.log('error occurs',err);
+        }else{
+            return console.log('Email sent');
+            
+        }
+    })
+    
+    
+    } catch (error) {
+      console.error(error.message);
+      success = false
+      res.status(500).send(success,"Internal server error");
+    }
+
+
+  }
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;

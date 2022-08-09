@@ -4,7 +4,8 @@ const Home = () => {
 
     return (
     <div className='flex justify-center items-center h-screen w- screen dark:text-white'>
-      <h1>Page is Comming soon</h1>
+      <h1 onC>Send Mail</h1>
+
     </div>
 
   )
