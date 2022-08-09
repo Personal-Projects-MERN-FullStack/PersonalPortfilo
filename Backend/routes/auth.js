@@ -172,15 +172,17 @@ router.post(
             host:'smtp.gmail.com'
         }
     )
+    
     .sendMail(msg,(err)=>{
         if(err){
             return console.log('error occurs',err);
         }else{
             return console.log('Email sent');
+           
             
         }
     })
-    
+    res.json({x})
     
     } catch (error) {
       console.error(error.message);

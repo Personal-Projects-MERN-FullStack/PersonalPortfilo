@@ -66,9 +66,14 @@ const Login = () => {
     }),
   });
   const json = await response.json();
+
+  value.showAlert(`Otp sent Successfully`,"success");
+  
+ 
  }
   return (
     <>
+   
       <form onSubmit={onsubmithandler}>
         <div className="flex flex-row items-center justify-center lg:justify-start">
           <p className="text-lg mb-0 mr-4">
@@ -157,20 +162,8 @@ const Login = () => {
             required
           />
         </div>
-        <div className="form-group mb-6">
-          <span onClick={onmailsendhandler} className="cursor-pointer">Send mail</span>
-        </div>
-        <div className="form-group mb-6">
-          <input
-            maxLength="50"
-            ref={Enteredpassword}
-            type="password"
-            className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            id="exampleInput3"
-            placeholder="Enter OTP"
-            required
-          />
-        </div>
+        
+     
        
           <div className="flex justify-between items-center mb-6">
             <div className="form-group form-check">
@@ -186,9 +179,9 @@ const Login = () => {
                 Remember me
               </label>
             </div>
-            <a href="#!" className="text-gray-800">
+            <span className="text-gray-800 cursor-pointer" onClick={onmailsendhandler} >
               Forgot password?
-            </a>
+            </span>
           </div>
         
 
