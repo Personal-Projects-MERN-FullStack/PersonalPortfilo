@@ -1,18 +1,6 @@
 import Login from '../Component/AuthPages/Login'
 
 const Auth = () => {
-
-
-
-
-
-
-
-
-
-
-  
-  
   return (
     <section className="h-screen" htmlFor="Sign in and Register page">
     <div className="px-6 h-full text-gray-800" htmlFor="Sign in and Register page">
