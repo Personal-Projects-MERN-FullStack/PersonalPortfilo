@@ -39,7 +39,7 @@ const Navigation = () => {
         <div className="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2  border-gray-300 pb-5 lg:pb-0">
           <div className="flex items-center flex-shrink-0 text-gray-800 mr-16">
             <span className="font-semibold text-xl tracking-tight dark:text-white">
-              Pesonal web
+              Vaibhav Mohanalkar
             </span>
           </div>
 

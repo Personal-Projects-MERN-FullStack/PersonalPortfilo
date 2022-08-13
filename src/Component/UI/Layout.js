@@ -4,13 +4,15 @@ import Alert from '../Util/Alert'
 import Notecontext from '../../Context/Notes/Notecontext';
 const Layout=(props)=>{
 const value = useContext(Notecontext)
-    return(
+    return(<>
         <div className="bg-blue-300  ">
          <Navigation/> 
          <Alert alert={value.alert}/>  
         {props.children}
+       
         </div>
-    );
+   
+        </> );
 
 }
 export default Layout;

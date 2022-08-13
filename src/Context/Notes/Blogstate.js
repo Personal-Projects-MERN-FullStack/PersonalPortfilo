@@ -27,10 +27,12 @@ const Blogstate=(props)=>{
  
        
      fetch(
-       'https://bloging-website-30ee1-default-rtdb.firebaseio.com/blogpostdata.json'
+       'https://personal-portfilo-default-rtdb.firebaseio.com/blogpostdata.json'
      )
        .then((response) => {
-         return response.json();
+        //  return response.json();
+        return console.log(response)
+
          
        })
        .then((data) => {

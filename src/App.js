@@ -10,6 +10,7 @@ import Blogstate from "./Context/Notes/Blogstate";
 import Signup from "./Component/AuthPages/Signup";
 import Layout from "./Component/UI/Layout";
 import Projects from "./Pages/Projects";
+import Projectinfo from "./Component/ProjectsPage/Projectinfo";
 
 //Main function
 function App() {
@@ -58,6 +59,7 @@ function App() {
               <Route path="/Auth/Signup" element={<Signup />} />
               <Route path="*" element={<Error />} />
               <Route path="/Projects" element={<Projects />} />
+              <Route path="/Projects/Projectinfo" element={<Projectinfo/>} />
             </Routes>
           </div>
         </Layout>
