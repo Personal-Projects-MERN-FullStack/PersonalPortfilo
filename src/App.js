@@ -9,6 +9,7 @@ import BlogPage from "./Component/Mainpage/BlogPage";
 import Blogstate from "./Context/Notes/Blogstate";
 import Signup from "./Component/AuthPages/Signup";
 import Layout from "./Component/UI/Layout";
+import Projects from "./Pages/Projects";
 
 //Main function
 function App() {
@@ -56,6 +57,7 @@ function App() {
               <Route path="/Auth/Login" element={<Auth />} />
               <Route path="/Auth/Signup" element={<Signup />} />
               <Route path="*" element={<Error />} />
+              <Route path="/Projects" element={<Projects />} />
             </Routes>
           </div>
         </Layout>

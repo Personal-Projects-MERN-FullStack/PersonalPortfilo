@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Notecontext from "../../Context/Notes/Notecontext";
 
-const Signup = () => {
-  const [verified, setverified] = useState(false)
+const Signup = () => { 
+  const [unathorized, setunathorized] = useState(null)
   const [sent, setsent] = useState(false)
   const [otpbox, setotpbox] = useState(false);
   const value = useContext(Notecontext);
@@ -14,7 +14,7 @@ const Signup = () => {
   const Enteredpassword = useRef();
   const Enteredotp = useRef()
   const context = useContext(Notecontext);
-
+  
   const onsubmithandler = async (event) => {
     event.preventDefault();
     const ename = Enteredname.current.value;
@@ -46,7 +46,7 @@ const Signup = () => {
       context.showAlert("Singn Up succefulluy", "success");
       navigate("/");
     } else {
-      context.showAlert("plz verfiy you email first", "danger");
+      context.showAlert("Email address Already in use plz sign in ", "bg-red-900");
     }
   };
   const onmailsendhandler = async () => {
@@ -86,14 +86,22 @@ const Signup = () => {
   };
 const onotpchecker = ()=>{
   const otp = Enteredotp.current.value;
-  alert(value.otp)
+
   if(value.otp===otp){
-    setverified(true)
+    value.setverified(true)
   }
   else{
     value.showAlert("Enter correct verfication code ", "bg-red-900")
+    
   }
 }
+const unverfiedbuttonhandler = () =>{
+  setunathorized(true);
+  setTimeout(() => {
+    setunathorized(false);
+  }, 2000);
+}
+
   return (
     <>
       <section className="h-screen" htmlFor="Sign in and Register page">
@@ -194,7 +202,7 @@ const onotpchecker = ()=>{
                   />
                 </div>
 
-                <div className=" form-group mb-6 flex space-x-2">
+                <div className={` form-group ${(unathorized)?'mb-2':'mb-6'}  flex space-x-2`}>
                   <input
                     maxLength="50"
                     ref={Enteredemail}
@@ -208,6 +216,10 @@ const onotpchecker = ()=>{
                     {(sent)?'resend':'send'}
                   </span>
                 </div>
+                <div className=" form-group mb-6 ">
+                {unathorized && <span className="text-red-900 font-bold"> Verify Your Mail first </span>}
+                </div>
+                
                 {otpbox && (<>
                   <div className="form-group mb-6">
                     <input
@@ -221,8 +233,9 @@ const onotpchecker = ()=>{
                     />
                   </div>
                   <span className=" cursor-pointer p-2 rounded-xl border border-black hover:bg-green-400 text-white bg-black shadow-2xl  shadow-black hover:shadow-inner hover:border-white" onClick={onotpchecker}>
-                  {(verified)?'verfied':'verify'}
-                </span></>
+                  {(value.verified)?'verfied':'verify'}
+                </span>
+               </>
                 )}
                 <div className="form-group mb-6">
                   <input
@@ -234,21 +247,23 @@ const onotpchecker = ()=>{
                     placeholder="Enter Password"
                     required
                   />
+                 
                 </div>
-
+                    
                 <div className="text-center lg:text-left">
-                  {(verified) && 
+                  {(value.verified) && 
                   <button
                   type="submit"
                   className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   Register
                 </button>}
-                {(!verified) && 
+                {(!value.verified) && 
                 
                 <span
                     type="submit"
-                    className="inline-block px-7 py-3 disabled bg-gray-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md "
+                    className="cursor-pointer inline-block px-7 py-3 disabled bg-gray-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md "
+                  onClick={unverfiedbuttonhandler}
                   >
                     Register
                   </span>}

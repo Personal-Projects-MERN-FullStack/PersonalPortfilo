@@ -5,6 +5,8 @@ import darkmode from "./night-mode.png";
 import Notecontext from "../../Context/Notes/Notecontext";
 
 const Navigation = () => {
+ 
+  const value = useContext(Notecontext)
   const navigate = useNavigate();
   const [show, setshow] = useState(true);
   const [dark, setdark] = useState();
@@ -28,7 +30,9 @@ const Navigation = () => {
   const onlogouthandler = () => {
     setloggedin(false);
     navigate("/");
+    value.setverified(false)
   };
+
   return (
     <>
       <nav className="flex items-center justify-between flex-wrap dark:bg-gray-800  dark:text-white pt-4 lg:py-3 lg:px-12 ">
@@ -103,6 +107,13 @@ const Navigation = () => {
                   Add new
                 </button>
               )}
+              <Link
+                href="#responsive-header"
+                className=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2"
+                to="/Projects"
+              >
+                Projects
+              </Link>
             </div>
 
             <div className="relative mx-auto text-gray-600 lg:block hidden">
