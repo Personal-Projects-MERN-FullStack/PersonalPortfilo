@@ -12,7 +12,7 @@ const Displayproject = (Props) => {
         </h1>
       </div>
 
-      <div className="flex justify-start  overflow-x-scroll pb-10 hide-scroll-bar">
+      <div className="flex justify-start  overflow-y-scroll pb-10 hide-scroll-bar">
         <div className="flex  flex-nowrap  lg:ml-40 md:ml-20 ml-10 ">
           
           <Projectitem />

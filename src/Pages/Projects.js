@@ -1,10 +1,11 @@
 import React from "react";
 import Displayproject from "../Component/ProjectsPage/Displayproject";
+import './styles.css'
 
 const Projects = () => {
 
   return (
-    <div className="h-full w-full p-4">
+    <div className="h-full w-full p-4 ">
       <Displayproject title="React js Projects"/>
       <Displayproject title="Next js Projects"/>
       <Displayproject title="Andriod Development Projects"/>

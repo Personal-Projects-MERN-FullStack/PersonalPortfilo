@@ -7,10 +7,11 @@ import Notecontext from "../../Context/Notes/Notecontext";
 const Navigation = () => {
  
   const value = useContext(Notecontext)
+  const { loggedin, setloggedin } = useContext(Notecontext);
   const navigate = useNavigate();
   const [show, setshow] = useState(true);
   const [dark, setdark] = useState();
-  const { loggedin, setloggedin } = useContext(Notecontext);
+
 
   const themeSwitch = () => {
     if (document.documentElement.classList.contains("dark")) {

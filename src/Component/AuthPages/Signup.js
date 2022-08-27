@@ -87,7 +87,7 @@ const Signup = () => {
 const onotpchecker = ()=>{
   const otp = Enteredotp.current.value;
 
-  if(value.otp===otp){
+  if(value.otp === parseInt(otp)){
     value.setverified(true)
   }
   else{
@@ -225,7 +225,7 @@ const unverfiedbuttonhandler = () =>{
                     <input
                       maxLength="6"
                       ref={Enteredotp}
-                      type="text"
+                      type="number"
                       className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                       id="otpinput"
                       placeholder="Enter Otp here"
@@ -237,7 +237,7 @@ const unverfiedbuttonhandler = () =>{
                 </span>
                </>
                 )}
-                <div className="form-group mb-6">
+                <div className="form-group mb-6 mt-6">
                   <input
                     maxLength="50"
                     ref={Enteredpassword}
