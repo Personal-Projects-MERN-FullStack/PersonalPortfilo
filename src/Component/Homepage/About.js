@@ -10,8 +10,8 @@ import { BsFillCalendarDateFill,BsTelephoneFill} from "react-icons/bs";
 
 const About = () => {
   return (
-    <div className="h-5/6 bg-white overflow-scroll w-full  md:flex   py-auto p-4 space-y-2  pb-44">
-      <div className="flex flex-col justify-center items-center h-44 w-full  p-2">
+    <div className="h-5/6  overflow-scroll w-full     py-auto p-4 space-y-2  pb-44 dark:bg-white">
+      <div className="flex flex-col justify-center items-center  h-44 w-full  p-2">
         <div className=" flex justify-center itmes-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,8 +38,8 @@ const About = () => {
 
         <div></div>
       </div>
-      <div className="flex flex-col justify-center h-auto w-full  space-y-4 p-2">
-        <div className="h-auto w-full  flex flex-col justify-center items-center space-y-4">
+      <div className="md:flex md:space-x-8 md:justify-center md:items-baseline justify-center h-auto w-full  space-y-4 p-2">
+        <div className="h-auto w-full  flex flex-col justify-center items-center space-y-6">
           <div className="flex justify-center items-center">
             <span className="text-xl text-indigo-900 ">
               hello, i am a web <span className="font-semibold">designer</span>
@@ -83,7 +83,7 @@ const About = () => {
       </div>
       <div className="flex justify-center items-center w-full h-24 ">
         <div className="flex justify-center items-center border-2 border-indigo-900 px-8 py-2 font-semibold text-indigo-900 space-x-2">
-          <span>Download CV</span>
+          <span><a href="https://drive.google.com/file/d/1cwzRwctiEqb1tab4cYEhYeZYzHNT-CyC/view?usp=sharing">Download CV</a></span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -96,8 +96,10 @@ const About = () => {
         </div>
       </div>
 
+      <div className="flex flex-col space-y-12">
       <Hobbies />
       <Experiance />
+        </div>
 
     </div>
   );

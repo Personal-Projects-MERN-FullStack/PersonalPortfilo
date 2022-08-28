@@ -4,7 +4,7 @@ import Education from "./Education";
 import Wexperiance from "./Wexperiance";
 const Resume = () => {
   return (
-    <div className="h-5/6 bg-white overflow-scroll w-full  md:flex   py-auto p-4 space-y-2  pb-44">
+    <div className="h-5/6  overflow-scroll w-full     py-auto p-4 space-y-2  pb-44">
       <div className=" flex justify-center itmes-center text-3xl">
         <RiPagesLine />
       </div>

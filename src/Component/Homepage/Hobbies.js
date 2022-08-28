@@ -25,47 +25,47 @@ const Hobbies = () => {
         deep open she'd moving their, green grass to years life cattle heaven
         moveth.
       </div>
-      <div className="flex  flex-col justify-center items-center w-full space-y-8 text-indigo-900 font-semibold">
-        <div></div>
-        <div className="flex flex-col justify-center items-center">
+      <div className="md:grid md:grid-cols-4 md:gap-4 flex  flex-col justify-center items-center w-full space-y-8 text-indigo-900 font-semibold">
+       
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl">
             <BsCodeSlash/>
           </div>
           <div>Coding</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl">
             <FaMusic/>
           </div>
           <div>Music</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl">
             <AiFillCar />
           </div>
           <div>Travalling</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl">
             <CgGames/>
           </div>
           <div>Video Games</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl"><MdLocalMovies/></div>
           <div>Movies</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl"><GiForestCamp/></div>
           <div>Forest</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl">
             <TbBooks/>
           </div>
           <div>Books</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div className="text-3xl"><IoMdPhotos/></div>
           <div>Photos</div>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Wexperiance = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font ">
       <div className="mt-16 flex-col justify-center items-center  space-y-4">
         <div className="flex justify-center items-center ">
           <span className="text-xl text-indigo-900 ">
@@ -14,7 +14,7 @@ const Wexperiance = () => {
           <div className=" border-2 border-indigo-900 w-8"></div>
         </div>
       </div>
-      <div className="container px-5 py-16 mx-auto flex flex-wrap">
+      <div className="container px-5 py-16 mx-auto flex flex-wrap ">
         <div className="flex flex-wrap w-full">
           <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
             <div className="flex relative pb-12">

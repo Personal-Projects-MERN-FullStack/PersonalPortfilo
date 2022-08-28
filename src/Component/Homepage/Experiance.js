@@ -2,7 +2,7 @@ import React from "react";
 
 const Experiance = () => {
   return (
-    <div className="flex flex-col justify-center items-center space-y-4">
+    <div className="flex flex-col justify-center items-center space-y-4 ">
       <div className="flex justify-center items-center ">
         <span className="text-xl text-indigo-900 ">
           MY
@@ -18,9 +18,9 @@ const Experiance = () => {
         deep open she'd moving their, green grass to years life cattle heaven
         moveth.
       </div>
-      <div className="flex  flex-col justify-center items-center w-full space-y-8 text-indigo-900 font-semibold">
-        <div></div>
-        <div className="flex flex-col justify-center items-center">
+      <div className="md:grid md:grid-cols-4 md:gap-4 flex flex-col justify-center items-center w-full space-y-8 text-indigo-900 font-semibold">
+        
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const Experiance = () => {
           <div>Projects</div>
           <div>10</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const Experiance = () => {
           <div>Certificates</div>
           <div>10</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const Experiance = () => {
           <div>Languages</div>
           <div>7</div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center hover:text-3xl cursor-not-allowed">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"

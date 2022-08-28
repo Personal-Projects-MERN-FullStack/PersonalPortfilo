@@ -45,7 +45,7 @@ function App() {
     <Blogstate>
       <Router>
         <Layout>
-          <div className=" pb-16   bg-cyan-100 dark:bg-gray-900   overflow-scroll rounded-t-[50px] h-screen ">
+          <div className=" pb-16   bg-cyan-100 dark:bg-gray-900   overflow-y-hidden rounded-t-[50px] h-screen  ">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/Blogs" element={<Blogs />} />
