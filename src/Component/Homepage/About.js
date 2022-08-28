@@ -2,10 +2,15 @@ import React from "react";
 import Experiance from "./Experiance";
 import Hobbies from "./Hobbies";
 import Skills from "./Skills";
+import { HiUser} from "react-icons/hi";
+import { GiEarthAmerica} from "react-icons/gi";
+import { SiMinutemailer} from "react-icons/si";
+import { MdLocationPin} from "react-icons/md";
+import { BsFillCalendarDateFill,BsTelephoneFill} from "react-icons/bs";
 
 const About = () => {
   return (
-    <div className="h-5/6  overflow-scroll w-full  md:flex   py-auto p-4 space-y-2  pb-44">
+    <div className="h-5/6 bg-white overflow-scroll w-full  md:flex   py-auto p-4 space-y-2  pb-44">
       <div className="flex flex-col justify-center items-center h-44 w-full  p-2">
         <div className=" flex justify-center itmes-center">
           <svg
@@ -43,25 +48,25 @@ const About = () => {
           <div className="flex justify-center items-center ">
             <div className=" border-2 border-indigo-900 w-8"></div>
           </div>
-          <div className="flex justify-between items-center text-sm text-indigo-900">
-            <div className="font-bold">Name</div> <div>Mohanlkar vaibhav</div>
+          <div className="flex justify-between items-center text-sm text-indigo-900 w-full">
+            <div className="font-bold  flex justify-center items-center"><div className="text-xl mr-2"><HiUser/></div>Name</div> <div>Mohanlkar vaibhav</div>
           </div>
-          <div className="flex justify-between items-center text-sm text-indigo-900">
-            <div className="font-bold">Date Of Birth</div>{" "}
+          <div className="flex justify-between items-center text-sm text-indigo-900 w-full">
+            <div className="font-bold flex justify-center items-center"><div className="text-xl mr-2"><BsFillCalendarDateFill/></div>Date Of Birth</div>{" "}
             <div>Dec 15th 2002</div>
           </div>
-          <div className="flex justify-between items-center text-sm text-indigo-900">
-            <div className="font-bold">Phone</div> <div>+91 9284378620</div>
+          <div className="flex justify-between items-center text-sm text-indigo-900 w-full">
+            <div className="font-bold flex justify-center items-center"><div className="text-xl mr-2"><BsTelephoneFill/></div>Phone</div> <div>+91 9284378620</div>
           </div>
-          <div className="flex justify-between items-center text-sm text-indigo-900">
-            <div className="font-bold">Email</div>{" "}
+          <div className="flex justify-between items-center text-sm text-indigo-900 w-full">
+            <div className="font-bold flex justify-center items-center"><div className="text-xl mr-2"><SiMinutemailer/></div>Email</div>{" "}
             <div>mohanalkarvaibhav@gmail.com</div>
           </div>
-          <div className="flex justify-between items-center text-sm text-indigo-900">
-            <div className="font-bold">Web</div> <div>coming soon</div>
+          <div className="flex justify-between items-center text-sm text-indigo-900 w-full">
+            <div className="font-bold flex justify-center items-center"><div className="text-xl mr-2"><GiEarthAmerica/></div>Web</div> <div>coming soon</div>
           </div>
-          <div className="flex justify-between items-center text-sm text-indigo-900">
-            <div className="font-bold">Address</div>{" "}
+          <div className="flex justify-between items-center text-sm text-indigo-900 w-full">
+            <div className="font-bold flex justify-center items-center"><div className="text-xl mr-2"><MdLocationPin/></div>Address</div>{" "}
             <div>Gangakhed,Parbhani</div>
           </div>
           <div className="flex justify-between items-center text-sm text-indigo-900 my-4">
