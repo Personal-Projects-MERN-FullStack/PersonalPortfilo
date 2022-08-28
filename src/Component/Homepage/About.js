@@ -1,9 +1,11 @@
 import React from "react";
+import Experiance from "./Experiance";
+import Hobbies from "./Hobbies";
 import Skills from "./Skills";
 
 const About = () => {
   return (
-    <div className="h-auto w-full  md:flex flex flex-col justify-center  py-auto p-4 space-y-2 bg-white pb-44">
+    <div className="h-5/6  overflow-scroll w-full  md:flex   py-auto p-4 space-y-2  pb-44">
       <div className="flex flex-col justify-center items-center h-44 w-full  p-2">
         <div className=" flex justify-center itmes-center">
           <svg
@@ -25,8 +27,8 @@ const About = () => {
         <div className="flex justify-center items-center ">
           <div className="h-8 border-2 border-indigo-900 w-0"></div>
         </div>
-        <div className="flex justify-center items-center ">
-          <div className="w-full border-t-4 border-indigo-900 "></div>
+        <div className="flex justify-center items-center w-full ">
+          <div className="w-full border-t-4  border-indigo-900 "></div>
         </div>
 
         <div></div>
@@ -88,72 +90,10 @@ const About = () => {
           </svg>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center space-y-4">
-        <div className="flex justify-center items-center ">
-          <span className="text-xl text-indigo-900 ">
-            MY HOBBIES {"&"}
-            <span className="font-semibold ml-2">INTEREST</span>
-          </span>
-        </div>
-        <div className="flex justify-center items-center ">
-          <div className=" border-2 border-indigo-900 w-8"></div>
-        </div>
-        <div className="text-xs   text-wrap px-2 flex justify-center items-center">
-          Together moved fruitful seasons cattle morning seasons fourth above
-          replenish dry doesn't gathered midst given have green him was. God
-          midst deep open she'd moving their, green grass to years life cattle
-          heaven moveth.
-        </div>
-        <div className="flex  flex-col justify-center items-center w-full space-y-8 text-indigo-900 font-semibold">
-          <div></div>
-          <div className="flex flex-col justify-center items-center">
-            <div>logo</div>
-            <div>space</div>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div>logo</div>
-            <div>Music</div>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div>logo</div>
-            <div>Travalling</div>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
-                />
-              </svg>
-            </div>
-            <div>Video Games</div>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div>logo</div>
-            <div>Movies</div>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div>logo</div>
-            <div>Forest</div>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div>logo</div>
-            <div>Books</div>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div>logo</div>
-            <div>Photos</div>
-          </div>
-        </div>
-      </div>
+
+      <Hobbies />
+      <Experiance />
+
     </div>
   );
 };

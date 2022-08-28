@@ -28,7 +28,7 @@ const Home = () => {
           home
         </div>
         <div className="w-2/6  h-full flex justify-center items-center cursor-pointer" onClick={()=>{setpage(<About/>)}}>
-          about me
+          About Me
         </div>
         <div className="w-2/6  h-full flex justify-center items-center cursor-pointer" onClick={()=>{setpage(<Resume/>)}}>
           Resume
