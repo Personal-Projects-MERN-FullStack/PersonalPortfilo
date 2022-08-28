@@ -1,8 +1,8 @@
-import React, { useContext,useState } from "react";
+import React, { useState } from "react";
 import About from "../Component/Homepage/About";
 import Info from "../Component/Homepage/Info";
 import Resume from "../Component/Homepage/Resume";
-import Notecontext from "../Context/Notes/Notecontext";
+
 import "./styles.css";
 import dp from './dp.jpeg'
 import { AiFillHome } from 'react-icons/ai';
@@ -13,7 +13,7 @@ import { RiPagesLine } from 'react-icons/ri';
 
 
 const Home = () => {
-  const { loggedin } = useContext(Notecontext);
+  
   const [page, setpage] = useState(<Info/>)
 
   return (

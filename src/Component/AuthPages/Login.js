@@ -32,7 +32,7 @@ const Login = () => {
         }),
       });
       const json = await response.json();
-      console.log(json.success)
+      
       if (json.success ) {
         // Save the auth token and redirect
         localStorage.setItem("token", json.authtoken);
@@ -65,7 +65,7 @@ const Login = () => {
       
     }),
   });
-  // const json = await response.json();
+  // const json = await resome sponse.json();
 
   value.showAlert(`Otp sent Successfully`,"success");
   

@@ -59,7 +59,7 @@ function App() {
               <Route path="/Auth/Signup" element={<Signup />} />
               <Route path="*" element={<Error />} />
               <Route path="/Projects" element={<Projects />} />
-              <Route path="/Projects/Projectinfo" element={<Projectinfo/>} />
+              <Route path="/Projects/Projectinfo" element={<Projectinfo />} />
             </Routes>
           </div>
         </Layout>
