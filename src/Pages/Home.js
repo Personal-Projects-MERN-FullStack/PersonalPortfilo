@@ -23,19 +23,17 @@ const Home = () => {
           Web Designer
         </div>
       </div>
-      <div className="h-12 w-full bg-indigo-900 flex justify-center items-center text-white font-semibold">
-        <div className="w-2/6  h-full flex justify-center items-center" onClick={()=>{setpage(<Info/>)}}>
+      <div className="h-12 w-full bg-indigo-900 flex justify-center items-center text-white font-semibold ">
+        <div className="w-2/6  h-full flex justify-center items-center  cursor-pointer" onClick={()=>{setpage(<Info/>)}}>
           home
         </div>
-        <div className="w-2/6  h-full flex justify-center items-center" onClick={()=>{setpage(<About/>)}}>
-          about
+        <div className="w-2/6  h-full flex justify-center items-center cursor-pointer" onClick={()=>{setpage(<About/>)}}>
+          about me
         </div>
-        <div className="w-2/6  h-full flex justify-center items-center" onClick={()=>{setpage(<Resume/>)}}>
+        <div className="w-2/6  h-full flex justify-center items-center cursor-pointer" onClick={()=>{setpage(<Resume/>)}}>
           Resume
         </div>
-        <div className="w-2/6  h-full flex justify-center items-center">
-          project
-        </div>
+        
       </div>
       {page}
     </div>
