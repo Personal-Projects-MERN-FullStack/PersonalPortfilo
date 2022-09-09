@@ -14,40 +14,14 @@ import Projectinfo from "./Component/ProjectsPage/Projectinfo";
 
 //Main function
 function App() {
-  // console.log(value.alert)
-
-  // const routesdata = {
-  //   books: [
-  //     {
-  //       path: "/",
-  //       element: "<Home/>",
-  //     },
-  //     {
-  //       path: "/blogs",
-  //       element: "<Blogs/>",
-  //     },
-  //     {
-  //       path: "/Blogs/Blogspage",
-  //       element: "<BlogPage />",
-  //     },
-  //     {
-  //       path: "/BLogSubmitForm",
-  //       element: "<Auth />",
-  //     },
-  //     {
-  //       path: "*",
-  //       element: "<Error />",
-  //     },
-  //   ],
-  // };
-
+  
   return (
     <Blogstate>
       <Router>
         <Layout>
           <div className=" pb-16   bg-cyan-100 dark:bg-gray-900   overflow-y-hidden rounded-t-[50px] h-screen  ">
             <Routes>
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/" element={<Home/>} />
               <Route exact path="/Blogs" element={<Blogs />} />
               <Route exact path="/Blogs/Blogspage" element={<BlogPage />} />
               <Route
